@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moncayo – Short pants for beach and every day</title>
+<meta name="description" content="Moncayo sells casual and beach short pants in red, blue, green, black and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== EDIT YOUR LOOK HERE ===== */
+:root{
+  --bg:#EDF5F3;          /* page background */
+  --surface:#FFFFFF;     /* cards */
+  --ink:#12263A;         /* main text */
+  --muted:#51667A;       /* secondary text */
+  --line:#CFDDDA;        /* borders */
+  --accent:#12263A;      /* buttons (follows the colour picked in the hero) */
+  --on-accent:#FFFFFF;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1B27;--surface:#17283A;--ink:#EAF3F1;--muted:#9FB3C2;--line:#27405A;--accent:#EAF3F1;--on-accent:#0F1B27;color-scheme:dark;
+  }
+}
+/* ================================= */
+
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--font-body);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pick,#2457C5);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.02em}
+
+/* header */
+header{padding:1.1rem 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font:800 1.6rem var(--font-display);letter-spacing:-.03em;text-decoration:none}
+nav{display:flex;gap:1.4rem}
+nav a{text-decoration:none;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:2rem 0 4rem}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;max-width:11ch}
+.hero p.lead{margin-top:1.2rem;max-width:44ch;color:var(--muted)}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:36px;padding:1.5rem 1.5rem 1.2rem;text-align:center}
+.stage svg{width:min(340px,80%);margin:.5rem auto;transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
+.stage svg.pop{transform:rotate(-5deg) scale(1.04)}
+.picked{font:700 1.15rem var(--font-display);min-height:1.8rem}
+.swatches{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:.9rem}
+.sw{width:2.4rem;height:2.4rem;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0;position:relative}
+.sw[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:3px}
+
+/* shop */
+section{padding:4rem 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);font:500 .95rem var(--font-body);cursor:pointer}
+.chip i{width:.9rem;height:.9rem;border-radius:50%;border:1px solid rgba(0,0,0,.25)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1.3rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.card .art{padding:1.2rem;background:color-mix(in srgb,var(--c) 16%,var(--surface))}
+.card .art svg{width:70%;margin:auto}
+.card .body{padding:1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card h3{font-size:1.25rem}
+.meta{color:var(--muted);font-size:.95rem}
+.price{font:700 1.2rem var(--font-display);margin-top:auto;padding-top:.6rem}
+.card .btn{margin-top:.6rem;text-align:center;padding:.65rem 1rem}
+.empty{color:var(--muted);padding:2rem 0}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p+p{margin-top:1rem}
+.facts{display:grid;gap:1rem;align-content:start}
+.fact{border-left:4px solid var(--pick,#2457C5);padding:.2rem 0 .2rem 1rem}
+.fact b{display:block;font:700 1.15rem var(--font-display)}
+.fact span{color:var(--muted)}
+
+/* contact */
+.contact .box{background:var(--ink);color:var(--bg);border-radius:36px;padding:clamp(2rem,5vw,3.5rem);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.contact h2{max-width:16ch}
+.contact .btn{background:var(--bg);color:var(--ink)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero .wrap,.about .wrap{grid-template-columns:1fr}
+  nav{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" id="logo">Moncayo</a>
+    <nav aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Short pants for the beach and every day.</h1>
+        <p class="lead">Light, quick-drying shorts in every colour you can think of. Wear them to the shore, the café or the weekend market.</p>
+        <div class="cta">
+          <a class="btn" href="#shop">Shop the shorts</a>
+          <a class="btn ghost" href="#order">How to order</a>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="picked" id="picked" aria-live="polite"></div>
+        <div id="hero-art" aria-hidden="true"></div>
+        <div class="swatches" id="swatches" role="group" aria-label="Pick a colour"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="wrap">
+      <div class="head">
+        <h2>The shorts</h2>
+        <div class="chips" id="chips" role="group" aria-label="Filter by colour"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <h2>Made for warm days</h2>
+        <p style="margin-top:1rem">Moncayo started with one idea: a good pair of shorts should be easy to wear anywhere. Ours work for a walk on the sand and still look right at dinner.</p>
+        <p>Pick the colour that matches your mood. If you can’t decide, black goes with everything and red gets noticed.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>Light fabric</b><span>Breathable and dries fast after the water.</span></div>
+        <div class="fact"><b>Elastic waist with drawstring</b><span>Adjust the fit in seconds.</span></div>
+        <div class="fact"><b>Side pockets</b><span>Deep enough for a phone and keys.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="order">
+    <div class="wrap">
+      <div class="box">
+        <h2>Ready to order?</h2>
+        <p style="max-width:34ch">Message us with the colour and size you want. We reply with price, stock and delivery.</p>
+        <a class="btn" id="wa-main" href="#">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Moncayo. All rights reserved.</span>
+    <a href="#" id="ig">Instagram</a>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT YOUR STORE DETAILS HERE ===== */
+const CONFIG = {
+  storeName: "Moncayo",
+  whatsapp: "6281234567890",            // your number, country code first, no + or spaces
+  instagram: "https://instagram.com/moncayo", // your Instagram link
+  currency: "$",                        // e.g. "Rp", "$", "€"
+  // Add, remove or rename colours. "hex" is the colour shown on the shorts.
+  colors: [
+    { id: "red",    name: "Red",    hex: "#D62F2F" },
+    { id: "blue",   name: "Blue",   hex: "#2457C5" },
+    { id: "green",  name: "Green",  hex: "#2E8B57" },
+    { id: "black",  name: "Black",  hex: "#1E1E1E" },
+    { id: "yellow", name: "Yellow", hex: "#F2B705" },
+    { id: "orange", name: "Orange", hex: "#F07C1B" },
+    { id: "navy",   name: "Navy",   hex: "#1B2A57" },
+    { id: "white",  name: "White",  hex: "#F6F6F2" }
+  ],
+  // Add your real products. "color" must match a colour id above.
+  products: [
+    { name: "Beach Short",  type: "Beach",  color: "red",    price: 24 },
+    { name: "Beach Short",  type: "Beach",  color: "blue",   price: 24 },
+    { name: "Beach Short",  type: "Beach",  color: "green",  price: 24 },
+    { name: "Casual Short", type: "Casual", color: "black",  price: 22 },
+    { name: "Casual Short", type: "Casual", color: "navy",   price: 22 },
+    { name: "Casual Short", type: "Casual", color: "white",  price: 22 },
+    { name: "Beach Short",  type: "Beach",  color: "yellow", price: 24 },
+    { name: "Casual Short", type: "Casual", color: "orange", price: 22 }
+  ]
+};
+/* ======================================== */
+
+const $ = (s) => document.querySelector(s);
+const byId = Object.fromEntries(CONFIG.colors.map(c => [c.id, c]));
+
+function shorts(hex) {
+  return `<svg viewBox="0 0 200 190" role="img" aria-label="Short pants">
+    <path d="M38 34h124l14 124h-70l-6-62-6 62H24Z" fill="${hex}" stroke="rgba(0,0,0,.35)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M38 34h124l1.5 14h-127Z" fill="rgba(0,0,0,.18)"/>
+    <path d="M94 48v26M106 48v26" stroke="rgba(255,255,255,.75)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M50 74q10 14 8 38" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M150 74q-10 14-8 38" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>`;
+}
+
+/* hero colour picker */
+function pick(id, animate = true) {
+  const c = byId[id];
+  $("#hero-art").innerHTML = shorts(c.hex);
+  $("#picked").textContent = c.name;
+  const dark = id === "white" || id === "yellow";
+  const accent = dark ? "#12263A" : c.hex;
+  document.documentElement.style.setProperty("--pick", accent);
+  document.querySelectorAll(".sw").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === id));
+  if (animate) {
+    const svg = $("#hero-art svg");
+    svg.classList.add("pop");
+    setTimeout(() => svg.classList.remove("pop"), 350);
+  }
+}
+$("#swatches").innerHTML = CONFIG.colors.map(c =>
+  `<button class="sw" data-id="${c.id}" style="background:${c.hex}" aria-label="${c.name}" aria-pressed="false"></button>`).join("");
+$("#swatches").addEventListener("click", e => {
+  const b = e.target.closest(".sw"); if (b) pick(b.dataset.id);
+});
+pick(CONFIG.colors[0].id, false);
+
+/* shop grid + filter */
+let filter = "all";
+function waLink(text) {
+  return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+function renderChips() {
+  const all = [{ id: "all", name: "All", hex: null }, ...CONFIG.colors];
+  $("#chips").innerHTML = all.map(c =>
+    `<button class="chip" data-id="${c.id}" aria-pressed="${filter === c.id}">${c.hex ? `<i style="background:${c.hex}"></i>` : ""}${c.name}</button>`).join("");
+}
+function renderGrid() {
+  const list = CONFIG.products.filter(p => filter === "all" || p.color === filter);
+  $("#grid").innerHTML = list.length ? list.map(p => {
+    const c = byId[p.color];
+    const msg = `Hi ${CONFIG.storeName}, I want to order the ${c.name} ${p.name}. Is it available?`;
+    return `<article class="card" style="--c:${c.hex}">
+      <div class="art">${shorts(c.hex)}</div>
+      <div class="body">
+        <h3>${p.name}</h3>
+        <span class="meta">${c.name} · ${p.type}</span>
+        <span class="price">${CONFIG.currency}${p.price}</span>
+        <a class="btn" href="${waLink(msg)}" target="_blank" rel="noopener">Order this</a>
+      </div>
+    </article>`;
+  }).join("") : `<p class="empty">No shorts in this colour yet. Check back soon.</p>`;
+}
+$("#chips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  filter = b.dataset.id; renderChips(); renderGrid();
+});
+renderChips(); renderGrid();
+
+/* contact + footer */
+$("#wa-main").href = waLink(`Hi ${CONFIG.storeName}, I'd like to order shorts.`);
+$("#wa-main").target = "_blank"; $("#wa-main").rel = "noopener";
+$("#ig").href = CONFIG.instagram;
+$("#year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
